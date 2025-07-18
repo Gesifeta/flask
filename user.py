@@ -1,7 +1,8 @@
 import datetime
 class User:
-    def __init__(self, is_logged):
+    def __init__(self):
         self.is_logged = False
+        self.first_name = ""
         self.username = None
         self.password = None
         self.email = None
@@ -14,17 +15,21 @@ class User:
         }
 
 
+    def create_user(self,first_name, username, password):
+        self.username = username
+        self.password = password
+        self.first_name = first_name
+
     def login(self, username, password):
         self.username = username
         self.password = password
         self.is_logged = True
 
-    def create_blog(self,title,text):
-        self.title = title
-        self.text = text
 
     def logout(self):
         self.is_logged = False
+
+
 
 
 
